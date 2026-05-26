@@ -2,20 +2,246 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Futsal</title>
-<link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroFuturo | O Poder do Agronegócio</title>
+    <style>
+        /* Estilização Geral (CSS) */
+        :root {
+            --verde-escuro: #1b4332;
+            --verde-claro: #40916c;
+            --palha: #f4f1de;
+            --texto: #2d3142;
+            --branco: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--palha);
+            color: var(--texto);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--verde-escuro);
+            color: var(--branco);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        nav a {
+            color: var(--branco);
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #b7e4c7;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--branco);
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: var(--branco);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        /* Seção Interativa */
+        .interactive-section {
+            background: var(--branco);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            margin-top: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: var(--verde-claro);
+            color: var(--branco);
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: var(--verde-escuro);
+        }
+
+        #resultado {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8f5e9;
+            border-left: 5px solid var(--verde-claro);
+            border-radius: 4px;
+            display: none;
+        }
+
+        footer {
+            background-color: var(--verde-escuro);
+            color: var(--branco);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
-<header>
-<h1>Futsal</h1>
-</header>
-<section>
-<p>Futsal é o futebol adaptado para prática em uma quadra esportiva por times de 5 jogadores. As equipes, tal como no futebol, têm como objetivo colocar a bola na meta adversária, definida por dois postes verticais limitados pela altura por uma trave horizontal. Quando tal objetivo é alcançado, diz-se que um gol foi marcado, e um ponto é adicionado à equipe que o atingiu. O goleiro, último jogador responsável por evitar o gol, é o único autorizado a segurar a bola com as mãos, mas somente dentro da área. A partida é ganha pela equipe que marcar o maior número de gols em 40 minutos divididos em dois tempos</p>
-<p>blablabla</p>
-</section>
-</body>
-</html>
-<footer>
-<p>&copy; 2024 Todos os direitos reservados</p>
-</footer>
+
+    <header>
+        <h1>🌱 AgroFuturo</h1>
+        <nav>
+            <a href="#pilares">Pilares</a>
+            <a href="#calculadora">Simulador</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h2>O Futuro Sustentável da Agricultura</h2>
+        <p>Tecnologia, inovação e respeito à terra alimentando o mundo.</p>
+    </div>
+
+    <div class="container">
+        
+        <section id="pilares">
+            <h2 style="text-align: center; color: var(--verde-escuro);">Pilares do Agro Moderno</h2>
+            <div class="grid">
+                
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1560493450-b15b2c91f421?auto=format&fit=crop&w=500&q=80" alt="Tecnologia no campo">
+                    <div class="card-content">
+                        <h3>Tecnologia de Ponta</h3>
+                        <p>O uso de drones, sensores IoT e tratores autônomos otimiza o plantio e a colheita, economizando tempo e recursos.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad451?auto=format&fit=crop&w=500&q=80" alt="Sustentabilidade">
+                    <div class="card-content">
+                        <h3>Sustentabilidade</h3>
+                        <p>Práticas como o plantio direto, rotação de culturas e manejo biológico protegem o solo e preservam a biodiversidade.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1592417817098-8f3d6eb18865?auto=format&fit=crop&w=500&q=80" alt="Logística">
+                    <div class="card-content">
+                        <h3>Alimentando o Mundo</h3>
+                        <p>O agronegócio é o motor da economia, garantindo a segurança alimentar de bilhões de pessoas diariamente.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="calculadora" class="interactive-section">
+            <h2 style="color: var(--verde-escuro); margin-top: 0;">🧮 Simulador de Produtividade (Milho)</h2>
+            <p>Insira os dados da sua propriedade fictícia para calcular uma estimativa de colheita:</p>
+            
+            <div class="form-group">
+                <label for="hectares">Tamanho da Área (em Hectares):</label>
+                <input type="number" id="hectares" placeholder="Ex: 50" min="1">
+            </div>
+
+            <div class="form-group">
+                <label for="tipoAgro">Nível de Tecnologia aplicado:</label>
+                <input type="text" id="tipoAgro" placeholder="Digite: Baixo, Médio ou Alto">
+            </div>
+
+            <button onclick="calcularProdutividade()">Calcular Estimativa</button>
+
+            <div id="resultado"></div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 AgroFuturo. Desenvolvido para o GitHub Pages.</p>
+    </footer>
+
+    <script>
+        function calcularProdutividade() {
+            const hectares = parseFloat(document.getElementById('hectares').value);
+            const tecnologia = document.getElementById('tipoAgro').value.toLowerCase().trim();
+            const resultadoDiv = document.getElementById('resultado
